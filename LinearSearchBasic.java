@@ -28,7 +28,7 @@ public class LinearSearchBasic extends GhidraScript {
 	String test = "-------------------------------------";
 	while(ins_list.hasNext()){             //go through each instruction and print it out to the console
    		ins = ins_list.next();
-    		println(counter.toString()+" "+ ins.getDefaultOperandRepresentation​(0));
+    		println(counter.toString()+" "+ins.getMnemonicString()+" "+ ins.getDefaultOperandRepresentation​(0));
 		println(test);
 		counter++;
 		//print(ins); doesn't works
