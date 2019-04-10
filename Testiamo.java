@@ -19,7 +19,7 @@ import ghidra.program.model.pcode.*;
 import ghidra.program.model.address.*;
 import ghidra.program.flatapi.*;
 
-public class DeveFunzionare extends GhidraScript {
+public class Testiamo extends GhidraScript {
 
 public void run() throws Exception {
 	
