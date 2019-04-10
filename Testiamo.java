@@ -17,35 +17,23 @@ import ghidra.program.model.listing.*;
 import ghidra.program.model.lang.*;
 import ghidra.program.model.pcode.*;
 import ghidra.program.model.address.*;
-import ghidra.program.flatapi.*;
 
-public class Testiamo extends GhidraScript {
+public class LinearSearchBasic extends GhidraScript {
 
-public void run() throws Exception {
-	
-
-	
-	Listing listing = currentProgram.getListing();
-	
-	InstructionIterator inslist = listing.getInstructions(true);
-	
+    public void run() throws Exception {
+	Listing listing = currentProgram.getListing(); //get a Listing interface
+	InstructionIterator ins_list = listing.getInstructions(true); //get an Instruction iterator
 	Instruction ins;
-	
-	while(inslist.hasNext()) {
-		ins = inslist.next();
-		Object[] ops = ins.getOpObjects(0);
-	try {
-		Address target_addr = ops[0];
-		Function sink_func = listing.getFunctionAt(target_addr);
-		String sink_func_name = sink_func.getName();
-		println(sink_func_name);
-	} catch (Exception e) {
-		
+	Integer counter = 0;
+	String test = "-------------------------------------";
+	while(ins_list.hasNext()){             //go through each instruction and print it out to the console
+   		ins = ins_list.next();
+    		println(counter.toString()+" "+ins.getMnemonicString()+" "+ ins.getDefaultOperandRepresentation​(0));
+		println(test);
+		counter++;
+		//print(ins); doesn't works
+		// println(ins); doesn't works
 	}
-		
-		
-	}
-	
-}
+    }
 
 }
